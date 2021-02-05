@@ -18,4 +18,8 @@ export class FoodSpawn {
         else return false;
     }
 
+    public incrementSpeed() {
+        this.spawn_rate -= 10;
+    }
+
 }

@@ -7,18 +7,31 @@ export class Hero {
 
     constructor(X: number, Y: number, animated_sprite: any) {
         this.position = [X, Y]
-        this.speed = 5;
+        this.speed = 8;
         this.dir = 0;
         this.sprite = animated_sprite;
         this.sprite.position.set(X, Y);
     }
     
-    public update(): void {
+    public update(width: number): void {
+        if (this.dir > 0) {
+            if (this.sprite.position.x + this.speed > width)
+                return;
+        }
+        else {
+            if (this.sprite.position.x - this.speed < 0) 
+                return;
+        }
+        
         this.sprite.position.x += this.speed * this.dir;
     }
 
     public move(dir: -1 | 0 | 1): void {
         this.dir = dir;
+    }
+    
+    public incrementSpeed() {
+        this.speed += 1;
     }
 
     public changeSprite(new_sprite: void, animation_speed: number) {
