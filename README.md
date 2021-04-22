@@ -1,3 +1,3 @@
-2d typescript/pixijs game
-after clone start with:
-npm install && npm start
+<b>Catch food game</b>
+<p>start with:</p>
+<p>npm install && npm start</p>
